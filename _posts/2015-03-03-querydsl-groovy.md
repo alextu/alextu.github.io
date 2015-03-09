@@ -28,7 +28,7 @@ Plutôt sympathique d'avoir du sql compilé, non ? On peut écrire toute sorte d
 
 ### Mapping vers des Pojo
 Bien évidemment c'est là où les ORM sont intéressants et où la solution "tout à la main" peut devenir barbante. Cependant Groovy va nous aider à fluidifier cette étape.
-Plusieurs solutions sont possibles :
+Moultes solutions sont possibles :
 
 * générer des beans en plus des Q*, ce qui permet à QueryDSL de renvoyer directement les Pojo peuplés. Je ne suis pas fan de cette approche qui impose une relation 1-1 entre Bean et Q et enlève toute liberté, ce qui est un peu le but recherché de la présente émancipation. 
 
@@ -36,6 +36,8 @@ Plusieurs solutions sont possibles :
 QueryDSL va utiliser la refléxion Java pour trouver un constructeur correspondant à ce que l'on appelle. En Groovy on peut utiliser l'annotation `@Canonical` pour générer un constructeur à partir des propriétés. On voit que c'est très concis, mais assez fragile car les erreurs éventuelles ne seront pas détectées à la compilation.
 
 * Utiliser les classes `MappingProjection` de QueryDSL ou `RowMapper` de spring-data
+
+* Utiliser l'api QueryDSL collections [^2] ou toute api de manipulation de listes d'objets, pourquoi pas les Streams de java 8 [^3] ?
 
 * Enfin, et c'est ma préférence, on peut simplement remmener des `Tuple`, simple objet conteneur d'une ligne de résultat et traiter ce résultat avec "some Groovyness".
 
@@ -87,16 +89,18 @@ class DemoQuerydslApplicationTests {
 }
 {% endhighlight %}
 
-- On injecte les données de test en base dans une nouvelle transaction, en utilisant querydsl !
-- On teste
-- Spring rollback la transaction pour nous, weee !
+- On injecte les données de test (test-blogs.sql) en base dans une nouvelle transaction
+- On teste dans le contexte de la transaction
+- Spring rollback la transaction pour nous, aucun nettoyage à faire !
 
 ### Conclusion
-Le projet complet est disponible ici : https://github.com/alextu/demo-querydsl et peut servir de starter pour qui veut démarrer sur cette voie. Je conseillerais cette approche aux équipes plus à l'aise en SQL qu'avec les subtilités et la complexité des ORM. Comme d'habitude dans notre métier, on a pas THE solution à tous nos problèmes, mais une nouvelle corde à notre arc, on peut par exemple combiner ORM pour l'update/insert et SQL brut pour la partie lecture nécessitant souvant de remmener des informations spécifiques à chaque écran de l'application.
+Le projet complet est disponible sur mon github[^4] et peut servir de starter pour qui veut démarrer sur cette voie. Je conseillerais cette approche aux équipes plus à l'aise en SQL qu'avec les subtilités et la complexité des ORM. Comme d'habitude dans notre métier, on a pas THE solution à tous nos problèmes, mais une nouvelle corde à notre arc, on peut par exemple combiner ORM pour l'update/insert et SQL brut pour la partie lecture nécessitant souvant de remmener des informations spécifiques à chaque écran de l'application.
 
 ### Références
 [^1]: <http://martinfowler.com/bliki/OrmHate.html>
-
+[^2]: <https://github.com/querydsl/querydsl/tree/master/querydsl-collections>
+[^3]: <http://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html>
+[^4]: <https://github.com/alextu/demo-querydsl>
 
 
 
