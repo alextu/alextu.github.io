@@ -64,7 +64,7 @@ expect(object.bar).toBe(20);
 
 Un exemple de "one-way databinding" : la valeur du composant texte sera synchronisée avec la proriété "nom" du ViewModel et pas inversement.
 
-Angular 2 semble séduisant sur d'autres aspects en éliminant pas mal de code obscur d'angular 1. Ce serait dommage d'en rajouter, espérons qu'ils reverront leur copie. [^3]
+Angular 2 semble séduisant sur d'autres aspects en éliminant pas mal de code obscur d'angular 1. Ce serait dommage d'en rajouter, l'"utilisabilité" d'un framework est un critère tout aussi important que la performance. Espérons qu'ils revoient leur copie. [^3]
 
 
 ### Références
