@@ -94,7 +94,7 @@ class DemoQuerydslApplicationTests {
 - Spring rollback la transaction pour nous, aucun nettoyage à faire !
 
 ### Conclusion
-Le projet complet est disponible sur mon github[^4] et peut servir de starter pour qui veut démarrer sur cette voie. Je conseillerais cette approche aux équipes plus à l'aise en SQL qu'avec les subtilités et la complexité des ORM. Comme d'habitude dans notre métier, on a pas THE solution à tous nos problèmes, mais une nouvelle corde à notre arc, on peut par exemple combiner ORM pour l'update/insert et SQL brut pour la partie lecture nécessitant souvant de remmener des informations spécifiques à chaque écran de l'application.
+Le projet complet est disponible sur mon github[^4] et peut servir de starter pour qui veut démarrer sur cette voie. Je conseillerais cette approche aux équipes plus à l'aise en SQL qu'avec les subtilités et la complexité des ORM. Comme d'habitude dans notre métier, on a pas THE solution à tous nos problèmes, mais une nouvelle corde à notre arc, on peut par exemple combiner ORM pour l'update/insert et SQL brut pour la partie lecture nécessitant souvent de remmener des informations spécifiques à chaque écran de l'application.
 
 ### Références
 [^1]: <http://martinfowler.com/bliki/OrmHate.html>
