@@ -68,6 +68,6 @@ Angular 2 semble séduisant sur d'autres aspects en éliminant pas mal de code o
 
 
 ### Références
-[^1]: http://blog.durandal.io/2015/03/17/aurelia-angular-2-0-code-side-by-side-part-2/
-[^2]: https://github.com/montagejs/frb/blob/master/README.md
-[^3]: https://docs.google.com/document/d/1US9h0ORqBltl71TlEU6s76ix8SUnOLE2jabHVg9xxEA/edit
+[^1]: <http://blog.durandal.io/2015/03/17/aurelia-angular-2-0-code-side-by-side-part-2/>
+[^2]: <https://github.com/montagejs/frb/blob/master/README.md>
+[^3]: <https://docs.google.com/document/d/1US9h0ORqBltl71TlEU6s76ix8SUnOLE2jabHVg9xxEA>
